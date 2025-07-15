@@ -1,0 +1,858 @@
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for content pages */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a8dadc, #457b9d, #1d3557);
+    /* ใช้พาธรูปภาพพื้นหลังของคุณที่นี่ */
+    background-image: url('img/login_3_0.png'); /* สมมติว่านี่คือรูปภาพพื้นหลังสำหรับหน้านี้ */
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+/* Main container สำหรับเนื้อหาหน้าเว็บทั้งหมด */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+.app-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 10px 20px; /* Adjusted padding for a smaller frame */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.concrete-text {
+    font-family: 'Mali', cursive;
+    font-size: 2em;
+    color: #457b9d;
+    margin: 0;
+    line-height: 1;
+    transform: rotate(-10deg);
+    position: relative;
+    left: -10px;
+}
+
+.heartcare-text {
+    font-family: 'Mali', cursive;
+    font-size: 2.2em;
+    color: #1d3557;
+    margin: 0;
+    line-height: 1;
+    transform: rotate(5deg);
+    position: relative;
+    left: 10px;
+    top: -8px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* ปรับระยะห่าง */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 6px 12px; /* ปรับ padding */
+    border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #e0f2f7;
+    color: #1d3557;
+}
+
+.nav-link.active {
+    background-color: #38b4f0;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* ปรับระยะห่าง */
+    background-color: #e0f2f7;
+    padding: 6px 12px; /* ปรับ padding */
+    border-radius: 20px;
+    font-size: 0.95em; /* ปรับขนาดตัวอักษร */
+    color: #1d3557;
+    font-weight: 500;
+}
+
+.user-icon {
+    font-size: 1.4em; /* ปรับขนาดไอคอน */
+    color: #457b9d;
+}
+
+/* Section Header Styles (สำหรับ "กิจกรรม" และ "รูปกิจกรรม" เป็นต้น) */
+.section-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.section-title-box {
+    background-color: #e0f2f7;
+    border-radius: 20px;
+    padding: 10px 25px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #1d3557;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Activity Cards - General Styles (นำกลับมาใช้ระหว่างหน้า home และ activity) */
+.activity-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px; /* ความกว้างคงที่สำหรับการ์ดในส่วนเลื่อนแนวนอน */
+    flex-shrink: 0;
+    margin-right: 20px; /* ระยะห่างระหว่างการ์ดในส่วนเลื่อนแนวนอน */
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.activity-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.activity-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.activity-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.activity-description {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.view-more-button {
+    background-color: #38b4f0;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #2b98d4;
+}
+
+/* Horizontal Scroll Container (นำกลับมาใช้) */
+.activity-cards-horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 15px; /* ระยะห่างสำหรับ scrollbar */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #38b4f0 #e0f2f7;
+}
+
+.activity-cards-horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.activity-cards-horizontal-scroll::-webkit-scrollbar-track {
+    background: #e0f2f7;
+    border-radius: 10px;
+}
+
+.activity-cards-horizontal-scroll::-webkit-scrollbar-thumb {
+    background-color: #38b4f0;
+    border-radius: 10px;
+    border: 2px solid #e0f2f7;
+}
+
+.activity-cards-horizontal-scroll .activity-card {
+    scroll-snap-align: start;
+}
+
+/* สไตล์ใหม่สำหรับหมวดหมู่กิจกรรม */
+.activities-category-section {
+    width: 100%;
+    margin-bottom: 40px; /* ระยะห่างระหว่างหมวดหมู่กิจกรรมที่แตกต่างกัน */
+}
+
+
+/* สไตล์เฉพาะสำหรับหน้า Login/Forgot/Verify/Change Password/Success (จากคำขอที่ผ่านมา) */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+}
+
+.login-container .header-logo .concrete-text {
+    font-size: 3.5em;
+    left: -20px;
+}
+
+.login-container .header-logo .heartcare-text {
+    font-size: 4em;
+    left: 20px;
+    top: -15px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #e0f2f7;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+}
+
+.forgot-password, .resend-code {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.forgot-password:hover, .resend-code:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.login-button, .send-button {
+    background-color: #38b4f0;
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover, .send-button:hover {
+    background-color: #2b98d4;
+    transform: translateY(-2px);
+}
+
+.login-button:active, .send-button:active {
+    transform: translateY(0);
+}
+
+.footer-info {
+    margin-top: 30px;
+    font-size: 0.85em;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* Specific titles for different pages */
+.login-title h2, .forgot-password-title h2, .verify-email-title h2, .change-password-title h2, .success-title {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.login-title p, .forgot-password-title p, .verify-email-title p, .change-password-title p, .success-subtitle {
+    font-size: 1em;
+    color: #666;
+    margin-top: 0;
+}
+.instructions {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Gallery Page Specific Styles */
+.gallery-page-container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.gallery-page-container .header-logo {
+    margin-bottom: 30px;
+}
+
+.gallery-page-container .header-logo .concrete-text {
+    font-size: 3.5em;
+    left: -20px;
+}
+
+.gallery-page-container .header-logo .heartcare-text {
+    font-size: 4em;
+    left: 20px;
+    top: -15px;
+}
+
+.gallery-section-header {
+    margin-bottom: 30px;
+}
+
+.gallery-title {
+    font-size: 2.5em;
+    color: #1d3557;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.gallery-subtitle {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 0;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.gallery-image-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-caption {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #333;
+    text-align: center;
+}
+
+.back-button {
+    width: auto;
+    padding: 12px 30px;
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 768px) {
+    /* General responsiveness for smaller devices */
+    .main-container {
+        padding: 15px;
+    }
+
+    /* Header responsiveness */
+    .app-header {
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .header-logo {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .concrete-text {
+        font-size: 1.6em;
+        left: -7px;
+    }
+
+    .heartcare-text {
+        font-size: 1.8em;
+        left: 7px;
+        top: -5px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+
+    .user-info {
+        font-size: 0.85em;
+        padding: 5px 10px;
+    }
+
+    /* Section titles */
+    .section-title-box {
+        padding: 8px 20px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    /* Activity cards */
+    .activity-card {
+        width: 250px;
+        margin-right: 15px;
+    }
+
+    .activity-image {
+        height: 150px;
+    }
+
+    .activity-name {
+        font-size: 1.2em;
+    }
+
+    .activity-description {
+        font-size: 0.85em;
+    }
+
+    .view-more-button {
+        padding: 7px 18px;
+        font-size: 0.85em;
+    }
+
+    .activity-cards-horizontal-scroll {
+        padding-bottom: 10px;
+    }
+
+    .activity-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .more-images-button {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+
+    /* Login/Gallery page specific adjustments for smaller screens */
+    .login-container, .gallery-page-container {
+        padding: 30px 30px;
+        width: 95%;
+    }
+
+    .login-container .header-logo .concrete-text, .gallery-page-container .header-logo .concrete-text {
+        font-size: 2.8em;
+        left: -15px;
+    }
+
+    .login-container .header-logo .heartcare-text, .gallery-page-container .header-logo .heartcare-text {
+        font-size: 3.2em;
+        left: 15px;
+        top: -12px;
+    }
+
+    .login-title h2, .forgot-password-title h2, .verify-email-title h2, .change-password-title h2, .success-title {
+        font-size: 1.8em;
+    }
+
+    .instructions, .footer-info, .success-subtitle {
+        font-size: 0.9em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+
+    .login-button, .send-button {
+        padding: 12px 30px;
+        font-size: 1.1em;
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .gallery-page-container {
+        padding: 20px;
+    }
+
+    .gallery-title {
+        font-size: 1.8em;
+    }
+
+    .gallery-subtitle {
+        font-size: 0.9em;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 15px;
+    }
+}
+
+/* --- NEW STYLES FOR COMMITTEE PAGE --- */
+
+.president-section, .committee-org-chart-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.president-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ปรับขนาดการ์ดให้เล็กลงและยืดหยุ่น */
+    gap: 20px; /* ระยะห่างระหว่างการ์ด */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.person-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+}
+
+.person-avatar {
+    width: 60px; /* ขนาดรูปโปรไฟล์ */
+    height: 60px;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.8); /* ขอบขาวรอบรูป */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.person-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.person-title {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+/* สีพื้นหลังของการ์ดประธาน/รองประธาน */
+.color-yellow { background-color: #ffe082; } /* เหลือง */
+.color-orange { background-color: #ffab91; } /* ส้ม */
+.color-red { background-color: #ef9a9a; } /* แดง */
+.color-green { background-color: #a5d6a7; } /* เขียว */
+.color-pink { background-color: #f8bbd0; } /* ชมพู */
+.color-blue-light { background-color: #90caf9; } /* น้ำเงินอ่อน */
+.color-light-blue { background-color: #81d4fa; } /* ฟ้า */
+.color-purple { background-color: #ce93d8; } /* ม่วง */
+
+
+/* --- สไตล์สำหรับผังองค์กรคณะกรรมการกลาง --- */
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* สำหรับเส้นเชื่อมโยง */
+}
+
+.org-level {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px; /* ระยะห่างระหว่างระดับ */
+    position: relative;
+}
+
+.org-level:last-child {
+    margin-bottom: 0;
+}
+
+.org-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* ให้การ์ดขึ้นบรรทัดใหม่ได้ถ้าไม่พอ */
+    gap: 20px; /* ระยะห่างระหว่างการ์ดในกลุ่ม */
+    margin: 0 10px; /* ระยะห่างระหว่างกลุ่มในระดับเดียวกัน */
+}
+
+.org-person-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px; /* ความกว้างคงที่ของการ์ดบุคคลในผังองค์กร */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.org-person-card .person-avatar {
+    width: 70px; /* ขนาดรูปโปรไฟล์ในผังองค์กร */
+    height: 70px;
+    margin-bottom: 8px;
+}
+
+.org-person-card .person-name {
+    font-size: 1.05em;
+    margin-bottom: 3px;
+}
+
+.org-person-card .person-title {
+    font-size: 0.85em;
+}
+
+/* เส้นเชื่อมโยง (พื้นฐาน) */
+/* เส้นแนวตั้งจากประธานกรรมการลงมา */
+.level-chairman::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* ครึ่งหนึ่งของ margin-bottom ของ org-level */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px; /* ความยาวเส้น */
+    background-color: #666;
+    z-index: -1;
+}
+
+/* เส้นแนวตั้งจากระดับรองประธาน/เลขา ลงมาระดับกรรมการ */
+.level-vice-secretaries::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* ครึ่งหนึ่งของ margin-bottom ของ org-level */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px; /* ความยาวเส้น */
+    background-color: #666;
+    z-index: -1;
+}
+
+/* เส้นแนวนอนสำหรับเชื่อมกลุ่มในระดับเดียวกัน (เช่น เลขา 2 คน) */
+.org-level.level-vice-secretaries .org-group:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #666;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/* ปรับ responsive สำหรับผังองค์กร */
+@media (max-width: 768px) {
+    .president-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .person-card {
+        padding: 10px;
+    }
+
+    .person-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .person-name {
+        font-size: 1em;
+    }
+
+    .person-title {
+        font-size: 0.8em;
+    }
+
+    .org-level {
+        flex-direction: column; /* จัดเรียงแนวตั้งสำหรับระดับในผังองค์กร */
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .org-group {
+        flex-direction: column; /* จัดเรียงแนวตั้งสำหรับการ์ดในกลุ่ม */
+        gap: 15px;
+        margin: 0;
+        width: 100%; /* ให้กลุ่มเต็มความกว้าง */
+    }
+
+    .org-person-card {
+        width: 90%; /* ให้การ์ดบุคคลเต็มความกว้างมากขึ้นบนมือถือ */
+        max-width: 250px; /* จำกัดความกว้างสูงสุด */
+        margin: 0 auto; /* จัดกึ่งกลาง */
+    }
+
+    /* ปรับเส้นเชื่อมโยงสำหรับ mobile */
+    .level-chairman::after, .level-vice-secretaries::after {
+        left: 50%;
+        transform: translateX(-50%);
+        height: 15px; /* ลดความยาวเส้น */
+        bottom: -15px;
+    }
+
+    .org-level.level-vice-secretaries .org-group:nth-child(2)::before {
+        display: none; /* ซ่อนเส้นแนวนอนเมื่อเป็นแนวตั้ง */
+    }
+}
+
+@media (max-width: 480px) {
+    .president-grid {
+        grid-template-columns: 1fr; /* 1 คอลัมน์บนมือถือเล็ก */
+        gap: 10px;
+    }
+
+    .person-card {
+        padding: 8px;
+    }
+
+    .person-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .person-name {
+        font-size: 0.9em;
+    }
+
+    .person-title {
+        font-size: 0.75em;
+    }
+}

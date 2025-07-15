@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Heart Care - Verify Email</title>
+    <link rel="stylesheet" href="verify_email.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="header-logo">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <form id="verifyEmailForm" class="verify-email-form">
+            <div class="verify-email-title">
+                <h2>Verify your email</h2>
+                <p>(ยืนยันอีเมลของคุณ)</p>
+            </div>
+
+            <p class="instructions">กรุณากรอกรหัส</p>
+
+            <div class="form-group">
+                <label for="verificationCode">PASSWORD</label> <input type="text" id="verificationCode" name="verificationCode" placeholder="Enter code here">
+                <a href="#" class="resend-code" id="resendCodeLink">ส่งรหัสอีกครั้ง</a>
+            </div>
+
+            <button type="submit" class="send-button">SEND</button>
+        </form>
+    </div>
+
+    <script src="verify_email.js"></script>
+</body>
+</html>

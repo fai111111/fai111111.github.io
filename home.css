@@ -1,0 +1,704 @@
+/* General Body Styles (reused from previous pages) */
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif; /* A Thai-friendly font */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for home page content */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a8dadc, #457b9d, #1d3557); /* Example gradient */
+    /* Use your actual background image path here */
+    background-image: url('img/login_3_0.png'); /* Assuming this is your background image for consistency */
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
+}
+
+/* Main container for the whole page content to center it */
+.main-container {
+    width: 100%;
+    max-width: 1200px; /* Max width for the content */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles (for home.html) */
+.app-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 5px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Header Logo (common to all pages) */
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-right: 30px; /* Adjust for specific page context */
+}
+
+.logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.concrete-text {
+    font-family: 'Mali', cursive;
+    font-size: 2em; /* Default for header */
+    color: #457b9d;
+    margin: 0;
+    line-height: 1;
+    transform: rotate(-10deg);
+    position: relative;
+    left: -10px;
+}
+
+.heartcare-text {
+    font-family: 'Mali', cursive;
+    font-size: 2.2em; /* Default for header */
+    color: #1d3557;
+    margin: 0;
+    line-height: 1;
+    transform: rotate(5deg);
+    position: relative;
+    left: 10px;
+    top: -8px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #e0f2f7;
+    color: #1d3557;
+    height: 20px;
+}
+
+.nav-link.active {
+    background-color: #38b4f0;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e0f2f7;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1em;
+    color: #1d3557;
+    font-weight: 500;
+}
+
+.user-icon {
+    font-size: 1.5em;
+    color: #457b9d;
+}
+
+/* Section Header Styles (for "กิจกรรม" and "รูปกิจกรรม" on home.html) */
+.section-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.section-title-box {
+    background-color: #e0f2f7; /* Light blue box */
+    border-radius: 20px;
+    padding: 10px 25px;
+    display: inline-block; /* Shrink to content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #1d3557;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Activity Cards - General Styles (for home.html) */
+.activity-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures image corners are rounded with card */
+    width: 280px; /* Fixed width for cards in horizontal scroll */
+    flex-shrink: 0; /* Prevent shrinking in flex container */
+    margin-right: 20px; /* Space between cards in horizontal scroll */
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+}
+
+.activity-image {
+    width: 100%;
+    height: 180px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area, crop if necessary */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.activity-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.activity-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.activity-description {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.view-more-button {
+    background-color: #38b4f0;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #2b98d4;
+}
+
+/* Horizontal Scroll Section (for home.html) */
+.activities-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.activity-cards-horizontal-scroll {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 15px; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Optional: snap to cards */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #38b4f0 #e0f2f7; /* Firefox */
+}
+
+/* Custom scrollbar for Webkit browsers */
+.activity-cards-horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.activity-cards-horizontal-scroll::-webkit-scrollbar-track {
+    background: #e0f2f7;
+    border-radius: 10px;
+}
+
+.activity-cards-horizontal-scroll::-webkit-scrollbar-thumb {
+    background-color: #38b4f0;
+    border-radius: 10px;
+    border: 2px solid #e0f2f7;
+}
+
+.activity-cards-horizontal-scroll .activity-card {
+    scroll-snap-align: start; /* Optional: snap to start of card */
+}
+
+/* Activity Grid Section (for home.html) */
+.activity-images-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px; /* Space between grid items */
+    justify-content: center; /* Center items if not filling full width */
+    width: 100%;
+}
+
+/* More Images Button (for home.html) */
+.more-images-button-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.more-images-button {
+    background-color: #38b4f0;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.more-images-button:hover {
+    background-color: #2b98d4;
+    transform: translateY(-2px);
+}
+
+.more-images-button:active {
+    transform: translateY(0);
+}
+
+/* Login/Forgot/Verify/Change Password/Success Pages Specific Styles (from previous requests) */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    /* For login/forgot/verify/change password/success pages, center vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+}
+
+/* Adjust header-logo for these specific pages to be larger */
+.login-container .header-logo .concrete-text {
+    font-size: 3.5em; /* Larger for these pages */
+    left: -20px;
+}
+
+.login-container .header-logo .heartcare-text {
+    font-size: 4em; /* Larger for these pages */
+    left: 20px;
+    top: -15px;
+}
+
+/* General form group styles (for login/forgot/verify/change password) */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #e0f2f7;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+}
+
+.forgot-password, .resend-code {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.forgot-password:hover, .resend-code:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.login-button, .send-button {
+    background-color: #38b4f0;
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover, .send-button:hover {
+    background-color: #2b98d4;
+    transform: translateY(-2px);
+}
+
+.login-button:active, .send-button:active {
+    transform: translateY(0);
+}
+
+/* Footer info for login page */
+.footer-info {
+    margin-top: 30px;
+    font-size: 0.85em;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* Specific titles for different pages */
+.login-title h2, .forgot-password-title h2, .verify-email-title h2, .change-password-title h2, .success-title {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.login-title p, .forgot-password-title p, .verify-email-title p, .change-password-title p, .success-subtitle {
+    font-size: 1em;
+    color: #666;
+    margin-top: 0;
+}
+.instructions {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
+/* --- NEW GALLERY PAGE STYLES --- */
+
+/* Adjust the login-container to be wider for the gallery page */
+.gallery-page-container {
+    width: 90%; /* Make it wider */
+    max-width: 1000px; /* Adjust max-width for gallery content */
+    padding: 40px; /* Adjust padding as needed */
+    margin-top: 50px; /* Push down slightly from top */
+    margin-bottom: 50px;
+}
+
+.gallery-page-container .header-logo {
+    margin-bottom: 30px; /* Space between logo and gallery title */
+}
+
+/* Adjust logo size for gallery page to be consistent with previous large logos */
+.gallery-page-container .header-logo .concrete-text {
+    font-size: 3.5em;
+    left: -20px;
+}
+
+.gallery-page-container .header-logo .heartcare-text {
+    font-size: 4em;
+    left: 20px;
+    top: -15px;
+}
+
+.gallery-section-header {
+    margin-bottom: 30px;
+}
+
+.gallery-title {
+    font-size: 2.5em; /* Larger title for gallery */
+    color: #1d3557;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.gallery-subtitle {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 0;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
+    gap: 25px; /* Space between images */
+    width: 100%;
+    margin-bottom: 40px; /* Space before back button */
+    justify-content: center; /* Center the grid items */
+}
+
+.gallery-image-card {
+    background-color: white;
+    border-radius: 15px; /* Slightly less rounded than full card for images */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block; /* Remove extra space below image */
+}
+
+.image-caption { /* Optional: if you add captions */
+    padding: 10px;
+    font-size: 0.9em;
+    color: #333;
+    text-align: center;
+}
+
+.back-button { /* Reusing login-button style for the back button */
+    width: auto; /* Allow button to size to content */
+    padding: 12px 30px; /* Adjust padding */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 768px) {
+    /* Adjust gallery container for smaller screens */
+    .gallery-page-container {
+        width: 95%;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .gallery-page-container .header-logo .concrete-text {
+        font-size: 2.8em;
+        left: -15px;
+    }
+
+    .gallery-page-container .header-logo .heartcare-text {
+        font-size: 3.2em;
+        left: 15px;
+        top: -12px;
+    }
+
+    .gallery-title {
+        font-size: 2em;
+    }
+
+    .gallery-subtitle {
+        font-size: 1em;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller cards on tablets */
+        gap: 20px;
+    }
+
+    .gallery-image {
+        height: 150px;
+    }
+
+    .back-button {
+        font-size: 1em;
+        padding: 10px 25px;
+    }
+
+    /* Keep existing responsiveness for general and home elements */
+    /* Header responsiveness */
+    .app-header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .header-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .concrete-text {
+        font-size: 1.8em;
+        left: -8px;
+    }
+
+    .heartcare-text {
+        font-size: 2em;
+        left: 8px;
+        top: -6px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 1em;
+        padding: 6px 12px;
+    }
+
+    .user-info {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    /* Section titles */
+    .section-title-box {
+        padding: 8px 20px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    /* Activity cards */
+    .activity-card {
+        width: 250px; /* Slightly smaller cards on mobile */
+        margin-right: 15px;
+    }
+
+    .activity-image {
+        height: 150px;
+    }
+
+    .activity-name {
+        font-size: 1.2em;
+    }
+
+    .activity-description {
+        font-size: 0.85em;
+    }
+
+    .view-more-button {
+        padding: 7px 18px;
+        font-size: 0.85em;
+    }
+
+    .activity-cards-horizontal-scroll {
+        padding-bottom: 10px;
+    }
+
+    .activity-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .more-images-button {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+
+    /* Login page specific adjustments for smaller screens (reused) */
+    .login-container {
+        padding: 30px 30px;
+        width: 95%;
+    }
+
+    .login-container .header-logo .concrete-text {
+        font-size: 2.8em;
+        left: -15px;
+    }
+
+    .login-container .header-logo .heartcare-text {
+        font-size: 3.2em;
+        left: 15px;
+        top: -12px;
+    }
+
+    .login-title h2, .forgot-password-title h2, .verify-email-title h2, .change-password-title h2, .success-title {
+        font-size: 1.8em;
+    }
+
+    .instructions, .footer-info, .success-subtitle {
+        font-size: 0.9em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+
+    .login-button, .send-button {
+        padding: 12px 30px;
+        font-size: 1.1em;
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .gallery-page-container {
+        padding: 20px;
+    }
+
+    .gallery-title {
+        font-size: 1.8em;
+    }
+
+    .gallery-subtitle {
+        font-size: 0.9em;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 15px;
+    }
+}

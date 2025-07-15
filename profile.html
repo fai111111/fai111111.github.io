@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Heart Care - โปรไฟล์</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome สำหรับไอคอนผู้ใช้ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- ส่วนหัว (Header Section) (นำกลับมาใช้จาก home.html เพื่อความสอดคล้อง) -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="header-logo">
+                    <img src="img/logo.png" alt="Logo" class="logo">
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html" class="nav-link">หน้าแรก</a></li>
+                    <li><a href="activity.html" class="nav-link">กิจกรรม</a></li>
+                    <li><a href="#" class="nav-link">คะแนน</a></li>
+                    <li><a href="committee.html" class="nav-link">กรรมการ</a></li>
+                    <li><a href="#" class="nav-link active">โปรไฟล์</a></li> <!-- เพิ่มลิงก์โปรไฟล์และตั้งเป็น active -->
+                </ul>
+            </nav>
+            <div class="user-info">
+                <i class="fas fa-user-circle user-icon"></i>
+                <span class="user-name">นาย ก</span>
+                <span class="user-score">200 คะแนน</span>
+            </div>
+        </header>
+
+        <!-- ส่วนข้อมูลผู้ใช้ -->
+        <section class="profile-info-section">
+            <div class="section-header">
+                <div class="section-title-box">
+                    <h3 class="section-title">ข้อมูลผู้ใช้</h3>
+                </div>
+            </div>
+            <div class="user-details-container">
+                <div class="user-details-card">
+                    <div class="user-avatar-placeholder">
+                        <i class="fas fa-user user-profile-icon"></i>
+                    </div>
+                    <div class="user-text-info">
+                        <p><strong>ชื่อ:</strong> นาย ก</p>
+                        <p><strong>คะแนน:</strong> 200</p>
+                        <p><strong>สี:</strong> ชมพู</p>
+                    </div>
+                    <button class="settings-button" id="settingsButton">การตั้งค่า</button>
+                </div>
+                <div class="total-score-box">
+                    <p class="score-label">คะแนนรวมสี</p>
+                    <p class="total-score">12,300</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ส่วนประวัติกิจกรรม -->
+        <section class="activity-history-section">
+            <div class="section-header">
+                <div class="section-title-box">
+                    <h3 class="section-title">ประวัติกิจกรรม</h3>
+                </div>
+            </div>
+            <div class="activity-history-list">
+                <!-- รายการกิจกรรม 1 -->
+                <div class="activity-history-item">
+                    <div class="activity-details-text">
+                        <p class="activity-history-name">STEP UP!</p>
+                        <p class="activity-history-desc">กิจกรรม: ขยับกาย สบายใจ</p>
+                        <p class="activity-history-score">คะแนนที่ได้รับ: 150</p>
+                    </div>
+                    <div class="activity-status">
+                        <a href="#" class="status-link" id="proofLink1">หลักฐาน</a>
+                        <span class="status-text">อัปโหลดแล้ว</span>
+                    </div>
+                </div>
+                <!-- รายการกิจกรรม 2 -->
+                <div class="activity-history-item">
+                    <div class="activity-details-text">
+                        <p class="activity-history-name">STEP UP!</p>
+                        <p class="activity-history-desc">กิจกรรม: ขยับกาย สบายใจ</p>
+                        <p class="activity-history-score">คะแนนที่ได้รับ: 150</p>
+                    </div>
+                    <div class="activity-status">
+                        <a href="#" class="status-link" id="proofLink2">หลักฐาน</a>
+                        <span class="status-text">อัปโหลดแล้ว</span>
+                    </div>
+                </div>
+                <!-- รายการกิจกรรม 3 -->
+                <div class="activity-history-item">
+                    <div class="activity-details-text">
+                        <p class="activity-history-name">STEP UP!</p>
+                        <p class="activity-history-desc">กิจกรรม: ขยับกาย สบายใจ</p>
+                        <p class="activity-history-score">คะแนนที่ได้รับ: 150</p>
+                    </div>
+                    <div class="activity-status">
+                        <a href="#" class="status-link" id="proofLink3">หลักฐาน</a>
+                        <span class="status-text">อัปโหลดแล้ว</span>
+                    </div>
+                </div>
+                <!-- รายการกิจกรรม 4 -->
+                <div class="activity-history-item">
+                    <div class="activity-details-text">
+                        <p class="activity-history-name">STEP UP!</p>
+                        <p class="activity-history-desc">กิจกรรม: ขยับกาย สบายใจ</p>
+                        <p class="activity-history-score">คะแนนที่ได้รับ: 150</p>
+                    </div>
+                    <div class="activity-status">
+                        <a href="#" class="status-link" id="proofLink4">หลักฐาน</a>
+                        <span class="status-text">อัปโหลดแล้ว</span>
+                    </div>
+                </div>
+                <!-- เพิ่มรายการกิจกรรมอื่นๆ ได้ตามต้องการ -->
+            </div>
+        </section>
+
+        <!-- ปุ่มออกจากระบบ -->
+        <div class="logout-button-container">
+            <button class="logout-button" id="logoutButton">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
